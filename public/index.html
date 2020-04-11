@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="description" content="Tyler Bailey is a DevOps Engineer & SEO Specialist based out of Hamilton, Ontario."/>
+        <title>Tyler Bailey | DevOps Engineer & SEO Specialist</title>
+
+        <link href="vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="vendors/linears-icon/style.css" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        
+        <link href="vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
+        <link href="vendors/animate-css/animate.css" rel="stylesheet">
+        
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/colors/default.css" title="default">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27246745-34"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-27246745-34');
+    </script>
+    
+    <script>
+    function submitToAPI(e) {
+        e.preventDefault();
+        var URL = "https://2cou4swaw1.execute-api.us-east-1.amazonaws.com/production";
+
+            var Namere = /[A-Za-z]{1}[A-Za-z]/;
+            if (!Namere.test($("#name-input").val())) {
+                        alert ("Name can not less than 2 char");
+                return;
+            }
+            // var mobilere = /[0-9]{10}/;
+            // if (!mobilere.test($("#phone-input").val())) {
+            //     alert ("Please enter valid mobile number");
+            //     return;
+            // }
+            if ($("#email-input").val()=="") {
+                alert ("Please enter your email id");
+                return;
+            }
+
+            var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            if (!reeamil.test($("#email-input").val())) {
+                alert ("Please enter valid email address");
+                return;
+            }
+
+        var name = $("#name-input").val();
+        // var phone = $("#phone-input").val();
+        var email = $("#email-input").val();
+        var desc = $("#description-input").val();
+        var data = {
+        name : name,
+        // phone : phone,
+        email : email,
+        desc : desc
+        };
+
+        $.ajax({
+        type: "POST",
+        url : "https://2cou4swaw1.execute-api.us-east-1.amazonaws.com/production",
+        dataType: "json",
+        crossDomain: "true",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+
+        
+        success: function () {
+            // clear form and show a success message
+            alert("Successfull");
+            document.getElementById("contact-form").reset();
+        location.reload();
+        },
+        error: function () {
+            // show an error message
+            alert("UnSuccessfull");
+        }});
+    }
+    </script>
+
+    </head>
+    <body class="dark_bg" data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="80" data-scroll-animation="true">
+       
+        <div id="preloader">
+            <div id="preloader_spinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <header class="header_area">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="img/logo-invert.png" alt=""></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#about">ABOUT ME </a></li>
+                            <li><a href="#experience">experience</a></li>
+                            <li><a href="#skill">Skill</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#service">services</a></li>
+                            <li><a href="#contact">contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container main_container">
+            <div class="content_inner_bg row m0">
+                <section class="about_person_area pad" id="about">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="person_img">
+                                <img src="img/TylerBailey.jpg" alt="Tyler Bailey Photo">
+                                <a class="download_btn" href="downloads/Tyler_Bailey_Resume.pdf"><span>Download Resume</span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row person_details">
+                                <h3>Hi I'm <span>Tyler Bailey</span></h3>
+                                <h4>DevOps Engineer</h4>
+                                <h5 style="color: red">This site built/deployed with Terraform/AWS/Github Actions - <a href="https://github.com/draalin/tylerbailey.com">View Code</a></h5></br>
+                                <p>Diverse DevOps background with 6+ years of hands-on experience building Infrastructure as Code, CI/CD pipelines, leveraging configuration management, and automating/optimizing mission critical deployments.</p>
+                                <div class="person_information">
+                                    <ul>
+                                        <li><a href="#">Address</a></li>
+                                        <li><a href="#">Email</a></li>
+                                        <li><a href="#">Website</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#">Hamilton, Ontario</a></li>
+                                        <li><a href="mailto:tyler@tylerbailey.com">tyler@tylerbailey.com</a></li>
+                                        <li><a href="https://tylerbailey.com/">tylerbailey.com</a> / <a href="https://tylerbailey.ca/">tylerbailey.ca</a> / <a href="https://playonmedia.com">playonmedia.com</a></li>
+                                    </ul>
+                                </div>
+                                <ul class="social_icon">
+                                    <li><a href="https://twitter.com/tbailey0316"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/tylerbailey0316/"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://github.com/draalin"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="https://gitlab.com/draalin"><i class="fa fa-gitlab"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="education_area pad" id="experience">
+                    <div class="main_title">
+                        <h2>Experience</h2>
+                    </div>
+                    <div class="education_inner_area">
+                        <div class="education_item wow fadeInUp animated" data-line="P">
+                            <h6>2019 - Present</h6>
+                            <a href="https://parallelmade.com/"><h4>Parallel Digital Studio</h4></a>
+                            <h5>DevOps Engineer</h5>
+                            <p>Building a technical stack including AWS, Cloudformation, Terraform, Docker, Gitlab CI, Python, ELK Stack.</p>
+                        </div>
+                        <div class="education_item wow fadeInUp animated" data-line="P">
+                            <h6>2013 - Present</h6>
+                            <a href="https://playonmedia.com/"><h4>PlayOn Media</h4></a>
+                            <h5>Cloud Architect</h5>
+                            <p>A small Hamilton based IT consultant company focusing on helping clients migrate to the cloud.</p>
+                        </div>
+                        <div class="education_item wow fadeInUp animated" data-line="T">
+                            <h6>2014 - 2020</h6>
+                            <a href="https://tylerbailey.ca/"><h4>Tyler Bailey SEO</h4></a>
+                            <h5>Search Engine Optimization Specialist</h5>
+                            <p>Toronto based SEO agency focusing on building platforms for small-to-medium sized businesses, specifically local search</p>
+                        </div>
+                        <div class="education_item wow fadeInUp animated" data-line="S">
+                            <h6>2019</h6>
+                            <a href="https://www.stormfree.cloud/"><h4>StormFree Cloud Corporation</h4></a>
+                            <h5>DevOps</h5>
+                            <p>Worked with a remote DevOps team to help build turnkey solutions on AWS using Kubernetes, Ansible, and Packer</p>
+                        </div>
+                        <div class="education_item wow fadeInUp animated" data-line="P">
+                            <h6>2014 - 2019</h6>
+                            <a href="http://www.postmedia.com/"><h4>Postmedia Network Inc.</h4></a>
+                            <h5>Operations</h5>
+                            <p>Assisted in the building and testing of infrastructure of applications that power some of the largest media websites in Canada including nationalpost.com</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="myskill_area pad" id="skill">
+                    <div class="main_title">
+                        <h2>Skill Set</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 wow fadeInUp animated">
+                            <div class="skill_item_inner">
+                                <div class="single_skill">
+                                    <h4>Infrastructure as Code</h4>
+                                    <p>Terraform, AWS CF, Ansible, Docker, Vagrant, Packer</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">100</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_skill">
+                                    <h4>Container Orchestration</h4>
+                                    <p>Kubernetes, AWS ECS & EKS, GCE, Docker Swarm</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">85</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_skill">
+                                    <h4>CI/CD</h4>
+                                    <p>Gitlab CI, Jenkins, Travis CI, Github Actions</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">90</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_skill">
+                                    <h4>Scripting / Programming Languages</h4>
+                                    <p>Python, Bash, PowerShell, JavaScript, Node.JS</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">70</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp animated">
+                            <div class="skill_item_inner">
+                                <div class="single_skill">
+                                    <h4>Cloud Platforms</h4>
+                                    <p>AWS, GCP, Azure, Linode, Digital Ocean, Heroku</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">80</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_skill">
+                                    <h4>Systems</h4>
+                                    <p>Ubuntu, Redhat, Debian, Windows 2012/2016</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">80</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_skill">
+                                    <h4>Monitoring & Logging</h4>
+                                    <p>Elastic Search, Logstash, Kibana, Grafana, Prometheus</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">70</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_skill">
+                                    <h4>Frameworks</h4>
+                                    <p>Express.JS, Django, Flask, Bootstrap, Foundation, Semantic UI</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress_parcent"><span class="counter">60</span>%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="education_area pad" id="education">
+                    <div class="main_title">
+                        <h2>Education</h2>
+                    </div>
+                    <div class="education_inner_area">
+                        <div class="education_item wow fadeInUp animated" data-line="U">
+                            <h6>2012-2014</h6>
+                            <a href="#"><h4>McMaster University</h4></a>
+                            <h5>Computing & Information Technology</h5>
+                            <p>Design, development, and deployment of computing systems in software products and computing infrastructure.</p>
+                        </div>
+                        <div class="education_item wow fadeInUp animated" data-line="C">
+                            <h6>2008-2011</h6>
+                            <a href="#"><h4>Mohawk College</h4></a>
+                            <h5>Network Engineering & Security Analyst</h5>
+                            <p>Involving network security, virtual infrastructure, data security and computer forensics.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="service_area" id="service">
+                    <div class="main_title">
+                        <h2>SERVICES</h2>
+                    </div>
+                    <div class="service_inner row">
+                        <div class="col-md-6">
+                            <div class="service_item wow fadeInUp animated">
+                                <i class="fa fa-building" aria-hidden="true"></i>
+                                <a href="#"><h4>Infrastructure Projects</h4></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service_item wow fadeInUp animated">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                <a href="#"><h4>Monitoring Services</h4></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service_item wow fadeInUp animated">
+                                <i class="fa fa-shield" aria-hidden="true"></i>
+                                <a href="#"><h4>Security Audits</h4></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service_item wow fadeInUp animated">
+                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                <a href="#"><h4>Cloud Migrations</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="contact_area pad" id="contact" style="margin-bottom: 60px">
+                    <div class="main_title">
+                        <h2>Contact</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="left_contact_details wow fadeInUp animated">
+                                <div class="contact_title">
+                                    <h3>Contact Info</h3>
+                                </div>
+                                <p>If you'd like to get in contact me or have any business inquiries please fill out the form or sent me an e-mail!</p>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Email</h4>
+                                        <p>tyler@tylerbailey.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact_from_area wow fadeInUp animated">
+                                <div class="contact_title">
+                                    <h3>Send Message</h3>
+                                </div>
+                                <div class="row">
+                                    <form id="contactForm" method="post">
+                                        <div class="form-group col-md-12">
+                                            <input type="text" id="name-input" placeholder="Enter name here…" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <input type="email" id="email-input" placeholder="Enter email here…" class="form-control"/>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <textarea id="description-input" rows="1" placeholder="Enter your message…" class="form-control"></textarea>
+                                        </div>
+                                        <div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control"></div>
+                                        <div class="form-group col-md-12">
+                                            <button type="button" onClick="submitToAPI(event)" class="btn btn-default contact_btn"><span>Submit</span></button>
+                                        </div>
+                                    </form>
+                                    <div id="success">	
+                                        <p>Your text message sent successfully!</p>	
+                                    </div>	
+                                    <div id="error">	
+                                        <p>Sorry! Message not sent. Something went wrong!!</p>	
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    
+        <footer class="footer_area">
+            <div class="footer_inner" style="margin-top: 0px;">
+                <div class="container">
+                    <img src="img/logo.png" alt="">
+                    <ul class="social_icon">
+                        <li><a href="https://twitter.com/tbailey0316"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/tylerbailey0316/"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/draalin"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://gitlab.com/draalin"><i class="fa fa-gitlab"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_copyright">
+                <div class="container">
+                    <div class="pull-left">
+                        <h5><p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="https://tylerbailey.com/" target="_blank">tylerbailey.com</a>
+</p></h5>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#">ABOUT ME </a></li>
+                            <li><a href="#">Experience</a></li>
+                            <li><a href="#">Skill</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">SERVICES</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="vendors/counter-up/waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope.pkgd.min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="vendors/style-switcher/styleswitcher.js"></script>
+        <script src="vendors/style-switcher/switcher-active.js"></script>
+        <script src="vendors/animate-css/wow.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="js/gmaps.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/contact.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
