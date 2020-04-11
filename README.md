@@ -32,10 +32,12 @@ aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAcc
 ```
 
 ### Github Secrets
-Setup the following secrets under your Github repos `settings/secrets`. You'll need to add your AWS Access Key & AWS Secret Access Key.
+Setup the following secrets under your Github repos `settings/secrets`. You'll need to add your AWS access key, AWS secret key, Cloudfront distribution ID, S3 bucket name you selected for your site.
 ```
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
+DISTRIBUTION_ID
+AWS_S3_BUCKET
 ```
 
 ### Managed outside of terraform
