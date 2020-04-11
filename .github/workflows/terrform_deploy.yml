@@ -1,11 +1,12 @@
 name: 'Terraform Deploy'
 
 on:
-    push:
-      branches:
-        - master
+  push:
     paths:
-      - 'public/**'
+      - 'infrastructure/**'
+  pull_request:
+    branches:
+      - master
 
 jobs:
   terraform:

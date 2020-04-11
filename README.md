@@ -1,4 +1,8 @@
 # tylerbailey.com (Basic Serverless Website)
+[![Actions Status](https://github.com/draalin/tylerbailey.com/workflows/Terraform%20Plan/badge.svg)](https://github.com/draalin/tylerbailey.com/actions/)
+[![Actions Status](https://github.com/draalin/tylerbailey.com/workflows/Terraform%20Deploy/badge.svg)](https://github.com/draalin/tylerbailey.com/actions/)
+[![Actions Status](https://github.com/draalin/tylerbailey.com/workflows/S3%20Deploy/badge.svg)](https://github.com/draalin/tylerbailey.com/actions/)
+
 This repo contains the website code (basic html), terraform infrastructure, and the Github Actions deployment pipeline for my resume site tylerbailey.com.
 
 ![Infrastructure](tylerbailey.com-s3-static-site-infrastructre.svg)

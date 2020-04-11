@@ -1,9 +1,10 @@
 name: 'Terraform Plan'
 
 on:
+  push:
+    paths:
+      - 'infrastructure/**'
   pull_request:
-  paths:
-    - 'infrastructure/**'
 
 jobs:
   terraform:

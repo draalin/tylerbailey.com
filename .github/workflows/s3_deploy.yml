@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'public/**'
+  pull_request:
+    branches:
+      - master
 
 jobs:
   deploy:
