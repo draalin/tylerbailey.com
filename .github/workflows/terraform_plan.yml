@@ -2,6 +2,8 @@ name: 'Terraform Plan'
 
 on:
   pull_request:
+  paths:
+    - 'infrastructure/**'
 
 jobs:
   terraform:
