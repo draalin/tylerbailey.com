@@ -98,7 +98,7 @@ terraform workspace select production
 
 Create a hierarchy of the Terraform infrastructure.
 
-![Infrastructure Terraform](tylerbailey.com-s3-static-site-infrastructre-terraform.svg)
+![Infrastructure Terraform](tylerbailey.com-s3-static-site-infrastructure-terraform.svg)
 
 ```
 sudo apt-get install graphviz -y
