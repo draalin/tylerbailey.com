@@ -93,3 +93,14 @@ terraform init
 terraform workspace new production
 terraform workspace select production
 ```
+
+###  Resource Graph
+
+Create a hierarchy of the Terraform infrastructure.
+
+![Infrastructure Terraform](tylerbailey.com-s3-static-site-infrastructre-terraform.svg)
+
+```
+sudo apt-get install graphviz -y
+terraform graph | dot -Tsvg > ../../../tylerbailey.com-s3-static-site-infrastructre-terraform.svg
+```
