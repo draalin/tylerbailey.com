@@ -5,7 +5,7 @@
 
 This repo contains the website code (basic html), terraform infrastructure, and the Github Actions deployment pipeline for my resume site tylerbailey.com.
 
-![Infrastructure](tylerbailey.com-infrastructre.svg)
+![Infrastructure](tylerbailey.com-infrastructure.svg)
 
 Website: -> `public` folder
 - Basic static website which is hosted on S3.
@@ -101,7 +101,7 @@ Create a hierarchy of the Terraform infrastructure.
 
 ```
 sudo apt-get install graphviz -y
-terraform graph | dot -Tsvg > ../../../tylerbailey.com-infrastructre-terraform.svg
+terraform graph | dot -Tsvg > ../../../tylerbailey.com-infrastructure-terraform.svg
 ```
 
 
